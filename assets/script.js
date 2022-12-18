@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 
 const decide = {
   ichar: function(x) {
-    window.prompt("Please enter how many characters the password needs to be:")
+    Number(window.prompt("Please enter how many characters the password needs to be:"));
   },
   schar: function() {
     window.prompt("Would you like special characters in your password?")
@@ -15,6 +15,9 @@ const decide = {
   },
   uchar: function() {
     window.prompt("Would you like uppercase characters in your password?")
+  },
+  nchar: function() {
+    window.prompt("Would you like numbers in your password?")
   }
 };
 
@@ -25,29 +28,41 @@ function generatePassword() {
     alert("Please enter a number less than 128!");
   }
   else if (userIchar <= 128) {
-    userIchar.String.length;
-    console.log(Math.floor(Math.random()*x));
+    let userPass = userIchar.String.length;
   }
   let userSchar = decide.schar();
   if(userSchar) {
     //no need to declare anything after userSchar since input is boolean
-    userSchar.toUppercase();
+    let userPass = userSchar.toUppercase().concat(userIchar);
   } else {
     alert("Okay, no uppercase letters will be included.");
   }
   let userLchar = decide.lchar();
   if (userLchar) {
-    userLchar.toLowercase();
+    let userPass = userLchar.toLowercase().concat(userIchar,userSchar)
   }
   else {
     alert("Okay, no lowercase letters will be included.");
   }
   let userUchar = decide.uchar();
   if (userUchar) {
-    userUchar.Math.value; //placeholder for now
+    //userUchar.Math.value; //placeholder for now
+    let userPass = userUchar.concat(userIchar,userSchar)
+  } 
+  else {
+    alert("Okay, no special characters will be included.")
   }
-
+  let userNchar = decide.nchar();
+  if (userNchar) {
+    // userNchar.Math.floor(Math.random); //placeholder for now ???
+    let userPass = userNchar.toLowercase().concat(userIchar,userSchar,userUchar)
+  } 
+  else {
+    alert("Okay no numbers will be included.")
+  }
 }
+
+// need to add validation that at least 1 of the options has been selected above ^
 
 function writePassword() {
   var password = generatePassword();
@@ -56,7 +71,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 
 
 // Add event listener to generate button

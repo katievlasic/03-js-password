@@ -6,6 +6,7 @@ With a provided code, this applications purpose will be to generate a password w
 
 The prompted choices will be:
 - Special Characters
+- Numbers 
 - Length (8-128 characters)
 - Upper vs. Lowercase present
 
