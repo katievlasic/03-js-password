@@ -6,6 +6,9 @@ var generateBtn = document.querySelector("#generate");
 const decide = {
   ichar: function(x) {
     Number(window.prompt("Please enter how many characters the password needs to be:"));
+    if (x <=8||x>=128) {
+      window.prompt("The value entered must be between 8 and 128. Please try again.");
+    };
   },
   schar: function() {
     window.prompt("Would you like special characters in your password?")
@@ -21,6 +24,8 @@ const decide = {
   }
 };
 
+// let userPass = randomIndex;
+// console.log(userPass);
 
 function generatePassword() {
   let userIchar = decide.ichar();
@@ -62,7 +67,7 @@ function generatePassword() {
   }
 }
 
-// need to add validation that at least 1 of the options has been selected above ^
+// To do! need to add validation that at least 1 of the options has been selected above ^
 
 function writePassword() {
   var password = generatePassword();
@@ -73,7 +78,17 @@ function writePassword() {
 }
 
 
-// Add event listener to generate button
+// Provided - Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 writePassword();
+
+// document.class.querySelector("#password")
+
+// Get defined variable of userPass to display in the text box when complete?
+// function name() {
+  // let display = document.querySelector('#password');
+  // display.value = userPass;
+//}
+
+// randomIndex
