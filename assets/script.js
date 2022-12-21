@@ -4,11 +4,12 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 const decide = {
-  ichar: function(x) {
-    Number(window.prompt("Please enter how many characters the password needs to be:"));
-    if (x <=8||x>=128) {
-      window.prompt("The value entered must be between 8 and 128. Please try again.");
+  ichar: function() {
+    window.prompt("Please enter how many characters the password needs to be:");
+    if (window.prompt.value <=8|| window.prompt.value >=128 || isNaN(window.prompt.value)) {
+      alert("The value entered must be between 8 and 128. Please try again.");
     };
+    ichar();
   },
   schar: function() {
     window.prompt("Would you like special characters in your password?")
@@ -92,3 +93,12 @@ writePassword();
 //}
 
 // randomIndex
+
+
+// function factorial(n){
+//   let result = 0;
+//   for (let index = n; index >0; index--){
+//     result += index;
+//   }
+// return result;
+// }
