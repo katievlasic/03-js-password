@@ -17,4 +17,4 @@ Following the prompts the password will either display in an alert or on the web
 
 ![preview of password generator](./assets/webimg.jpg)
 
-I was challenged by constraining what data types the user was able to enter. Creating if else statements helped achieve success!
+I was challenged by constraining what data types the user was able to enter. Creating if statements, using return, and defining a for loop to populate the password based on selections helped achieve success!
