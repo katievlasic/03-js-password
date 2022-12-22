@@ -12,3 +12,4 @@ The prompted choices will be:
 
 Following the prompts the password will either display in an alert or on the web application page.
 
+I was challenged by constraining what data types the user was able to enter. Creating if else statements helped achieve success!
